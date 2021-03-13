@@ -29,4 +29,5 @@ Before running any script make sure that you had installed all the above given l
 * First, try to install the server originally from the official release.
 * In some cases your machine is not capable of handling all this processing of continuous script, server and data manipulation at the same time. So there are files in
 the repo to give you a temporary server which will do all the original work and is not a burden on your system. You can create lists, manipulate data and validate and 
-do all those 
+do all those which a running server can do.
+* First install the Redis from the .exe installer package
