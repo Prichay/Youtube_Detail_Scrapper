@@ -39,6 +39,17 @@ do all those things which a running server can do.
 * It will parse the argument given using argparse
 * It will check its validity by extracting the title.
 * If it has a title, URL is varified otherwise it will tell you to re-enter.
+### Requests_process.py
+This script does a number of work:
+* This script will run indefinately to constantly look for the element in the Redis named process
+* Use of SIGTERM to soft termminate the script
+* Parse the HTML through Beautiful Soup "HTML PARSER" after getting the URL from process redis lsit
+* Scrape the details of the video using Beautiful Soup and pass them to a list then dict.
+* In-built Logging module of python gives you criticle error message.
+* Gives a seudo value to an attribute if the detail is not provided by the scrapped data.
+* Lastly, all the data is pushed into a "Key" and a "Value" Redis List which is used by the next script requests_save.
+### Requests_save.py
+* By using CSV package write the data present in the "Key" and "Values" list to a csv file in SCRIPT directory.
 ## NOTES
 * Encode/Unicode (utf-8) are used because redis list cannot handle the HTML or other binary bytes without thr proper encoding.
 * requests_save.csv will be saved in your working script directory.
