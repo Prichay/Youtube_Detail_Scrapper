@@ -29,5 +29,16 @@ Before running any script make sure that you had installed all the above given l
 * First, try to install the server originally from the official release.
 * In some cases your machine is not capable of handling all this processing of continuous script, server and data manipulation at the same time. So there are files in
 the repo to give you a temporary server which will do all the original work and is not a burden on your system. You can create lists, manipulate data and validate and 
-do all those which a running server can do.
-* First install the Redis from the .exe installer package
+do all those things which a running server can do.
+* First install the Redis from the .exe installer package and then unzip the 2nd file.
+* After unzipping, Open the appropriate folder according to the built of your machine and then run redis-server.
+* Now, your Redis server is ready for data operations.
+## Working:
+### Requests_queue.py
+* Execute this file by writing in terminal (in your sript directory) python3 requests_queue.py -URl __URL of video__  and then hitting enter
+* It will parse the argument given using argparse
+* It will check its validity by extracting the title.
+* If it has a title, URL is varified otherwise it will tell you to re-enter.
+## NOTES
+* Encode/Unicode (utf-8) are used because redis list cannot handle the HTML or other binary bytes without thr proper encoding.
+* requests_save.csv will be saved in your working script directory.
