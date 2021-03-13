@@ -35,13 +35,13 @@ do all those things which a running server can do.
 * Now, your Redis server is ready for data operations.
 ## Working:
 ### Requests_queue.py
-* Execute this file by writing in terminal (in your sript directory) python3 requests_queue.py -URl __URL of video__  and then hitting enter
+* Execute this file by writing in terminal (in your script directory) __python3 requests_queue.py -URL( __URL of video__)__  and then hitting enter
 * It will parse the argument given using argparse
 * It will check its validity by extracting the title.
 * If it has a title, URL is varified otherwise it will tell you to re-enter.
 ### Requests_process.py
 This script does a number of work:
-* This script will run indefinately to constantly look for the element in the Redis named process
+* This script will run indefinately to constantly look for the element in the Redis list named process
 * Use of SIGTERM to soft termminate the script
 * Parse the HTML through Beautiful Soup "HTML PARSER" after getting the URL from process redis lsit
 * Scrape the details of the video using Beautiful Soup and pass them to a list then dict.
